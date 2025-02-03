@@ -14,7 +14,9 @@ $location = isset($_GET['location']) ? $_GET['location'] : '';
 $parameters = array(
 	"per_page" => $per_page,
 	"page" => $page,
-	"location" => $location
+	"location" => $location,
+	"product_type" => 4, //(No overnight stay) (product_type 4) in Spain (country ES).
+	"country" => "ES"
 );
 
 $querystring = http_build_query($parameters);
@@ -114,7 +116,7 @@ $execution_time = ($end_time - $start_time);
         <div class="tour">
             <form action="" method="GET">
                 <label for="location">Enter the location:</label>
-                <input type="text" id="location" name="location" placeholder="Ejemplo: Barcelona" value="<?php echo htmlspecialchars($location); ?>" required>
+                <input type="text" id="location" name="location" placeholder="Example: Barcelona" value="<?php echo htmlspecialchars($location); ?>" required>
                 <button type="submit">Search</button>
             </form>
 
