@@ -1,14 +1,14 @@
 <?php
 	// Marketplace account ID
 	// Leave this as zero if you are a supplier (i.e. not a Marketplace partner)
-	$marketplace_account_id = 0;
+	$marketplace_account_id = 126;
 
 	// Channel ID
 	// Leave this as zero if you are a Marketplace partner (i.e. not a supplier)
 	$channel_id = 0;
 
 	// API Private Key (log in to TourCMS to get yours)
-	$api_private_key = "";
+	$api_private_key = "5aed2d3d69ea";
 
 	// Result type required
 	// 'raw' or 'simplexml', if not supplied defaults to 'raw'
@@ -19,7 +19,7 @@
 
 	// Include the TourCMS library
 	// Update this to point to the tourcms.php on your server
-	include $_SERVER['DOCUMENT_ROOT'] . '/vendor/tourcms/tourcms-php/src/TourCMS.php';
+	include $_SERVER['DOCUMENT_ROOT'] . '/tourcms/tourcms-php/src/TourCMS.php';
 
 	Use TourCMS\Utils\TourCMS as TourCMS;
 

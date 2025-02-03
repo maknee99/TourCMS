@@ -54,8 +54,8 @@ class TourCMS {
 
 	// General settings
 	protected $base_url = "https://api.tourcms.com";
-	protected $marketp_id = 0;
-	protected $private_key = "";
+	protected $marketp_id = 126;
+	protected $private_key = "5aed2d3d69ea";
 	protected $result_type = "";
 	protected $timeout = 0;
 	protected $last_request_headers = array();
@@ -148,7 +148,7 @@ class TourCMS {
 		);
 
 		$response = curl_exec($ch);
-
+		error_log("Info tour: " . $response);
 		$this->last_response_headers = $api_response_headers;
 
 		$header_size = curl_getinfo( $ch, CURLINFO_HEADER_SIZE );
@@ -289,7 +289,6 @@ class TourCMS {
 	# Tour/Hotel methods
 
 	public function search_tours($params = "", $channel = 0) {
-
 		$params = $this->validateParams($params);
 
 		if($channel==0)

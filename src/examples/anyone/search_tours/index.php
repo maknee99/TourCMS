@@ -1,7 +1,7 @@
 <?php
 
 // Include our API settings and wrapper
-include '../../config.php';
+include '../../config-example.php';
 
 // Pagination
 $per_page = 10;
@@ -25,6 +25,18 @@ $result = $tc->search_tours($querystring, $channel_id);
 		<title>Search Tours/Hotels</title>
 		<link rel="stylesheet" href="../../css/normalize.css" />
 		<link rel="stylesheet" href="../../css/examples.css" />
+		<style>
+			.tour-image {
+				max-width: 400px;
+				max-height: 400px;
+				width: auto;
+				height: auto;
+				border-radius: 6px;
+				display: block;
+				margin: 10px auto;
+			}
+
+		</style>
 	</head>
 	<body>
 		<h1>Search Tours/Hotels</h1>
@@ -50,10 +62,19 @@ $result = $tc->search_tours($querystring, $channel_id);
 						</a>
 					</h4>
 
+					<?php if (!empty($tour->image)): ?>
+						<img src="<?php print $tour->image; ?>" alt="<?php print htmlspecialchars($tour->tour_name); ?>" class="tour-image" />
+					<?php endif; ?>
+
 					<p class="summary"><?php print $tour->summary; ?></p>
 
 					<p><?php print $tour->shortdesc; ?></p>
-
+					<p>Duration: <?php print $tour->duration; ?></p>
+					<p>Price: <?php print $tour->from_price_display; ?></p>
+					<p>Start time: <?php print $tour->start_time; ?></p>
+					<p>End time: <?php print $tour->end_time; ?></p>
+					<p>Location: <?php print $tour->location; ?></p>
+					<p>Languages: <?php print !empty($tour->languages_spoken) ? $tour->languages_spoken : "Not specified"; ?></p>
 					<p class="buttons">
 						<a href="<?php print $tour->tour_url; ?>">View full details</a>
 						<a href="<?php print $tour->book_url; ?>">Book online</a>
