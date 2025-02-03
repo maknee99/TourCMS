@@ -1,7 +1,7 @@
 <?php
 
 // Include our API settings and wrapper
-include '../../config-example.php';
+include '../../config.php';
 
 // Pagination
 $per_page = 10;

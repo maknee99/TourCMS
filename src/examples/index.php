@@ -2,7 +2,7 @@
 // Time
 $start_time = microtime(true);
 // Include the TourCMS API wrapper
-include 'config-example.php';
+include 'config.php';
 
 // Pagination
 $per_page = 3;
@@ -92,12 +92,12 @@ $execution_time = ($end_time - $start_time);
 							<a href="http://www.tourcms.com/support/api/mp/tour_search.php" target="_blank">Show Tour</a>
 					</span>
 				</li>
-				<li>
+				<!--li>
 					<a href="anyone/search_tours_paged/">Display a list of Tours/Hotels with pagination</a>
 					<span class="ancillary">
 						<a href="http://www.tourcms.com/support/api/mp/search_tours.php">Search Tours/Hotels</a>
 					</span>
-				</li>
+				</li-->
 			</ul>
 			<p>More examples in future versions of the wrapper, for now check out the <a href="http://www.tourcms.com/support/api/mp/examples.php" target="_blank">examples page on our website</a> and don't forget each of the methods in <a href="http://www.tourcms.com/support/api/mp/" target="_blank">our documentation</a> contains sample code.</p>
 
